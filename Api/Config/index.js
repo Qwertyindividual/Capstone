@@ -1,11 +1,11 @@
 require("dotenv").config();
 let { createPool } = require("mysql");
 let connection = createPool({
-  HOST: process.env.DB_HOST,
-  DATABASE: process.env.DB_NAME,
-  USER: process.env.DB_User,
-  PASSWORD: process.env.DB_Pwd,
-  PORT: process.env.DB_Port,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  user: process.env.DB_User,
+  password: process.env.DB_Pwd,
+  port: process.env.DB_Port,
   multipleStatements: true,
 });
 

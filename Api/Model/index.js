@@ -298,14 +298,11 @@ class Cart {
     `;
 
     db.query(strQry, [req.params.id], (err) => {
-      if (err)
-        res.status(400).json({ err: "The Cart record was not found." });
+      if (err) res.status(400).json({ err: "The Cart record was not found." });
       res.status(200).json({ msg: "A Cart record was deleted." });
     });
   }
-
 }
-
 
 module.exports = {
   User,

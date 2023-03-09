@@ -15,7 +15,11 @@ const user = new User();
 
 const product = new Product();
 
+//Cart Instance
+
 const cart = new Cart();
+
+
 // GET Used Goods
 
 route.get("^/$|/Artcade", (req, res) => {

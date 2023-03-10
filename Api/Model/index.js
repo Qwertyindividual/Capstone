@@ -169,7 +169,7 @@ class Product {
   // To fetch all products
   fetchProducts(req, res) {
     const strQry = `
-        SELECT id, prodName, prodDescription, category, price, prodQuantity, imgURL
+        SELECT prodID, productName, prodDescription, prodCategory, Price, Quantity, imgURL
         FROM Products;
         `;
 
@@ -183,12 +183,12 @@ class Product {
 
   fetchProduct(req, res) {
     const strQry = `
-    SELECT id, prodName, prodDescription, category, price, prodQuantity, imgURL
+    SELECT id, productName, prodDescription, prodCategory, Price, Quantity, imgURL
     FROM Products
-    WHERE id = ?;
+    WHERE prodID = ?;
     `;
 
-    db.query(strQry, [req.params.id], (err, results) => {
+    db.query(strQry, [req.params.prodID], (err, results) => {
       if (err) throw err;
       res.status(200).json({ results: results });
     });
@@ -217,10 +217,10 @@ class Product {
     const strQry = `
     UPDATE Products
     SET ?
-    WHERE id = ?;
+    WHERE prodID = ?;
     `;
 
-    db.query(strQry, [req.body, req.params.id], (err) => {
+    db.query(strQry, [req.body, req.params.prodID], (err) => {
       if (err) {
         res.status(400).json({ err: "Unable to update a product record ." });
       } else {
@@ -234,10 +234,10 @@ class Product {
   deleteProduct(req, res) {
     const strQry = `
     DELETE FROM Products
-    WHERE id = ?;
+    WHERE prodID = ?;
     `;
 
-    db.query(strQry, [req.params.id], (err) => {
+    db.query(strQry, [req.params.prodID], (err) => {
       if (err)
         res.status(400).json({ err: "The product record was not found." });
       res.status(200).json({ msg: "A product record was deleted." });

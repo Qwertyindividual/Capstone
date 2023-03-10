@@ -85,7 +85,7 @@ class User {
 
     db.query(strQry, [req.params.id], (err, data) => {
       if (err) throw err;
-      else res.status(200).json({ result: data });
+      res.status(200).json({ result: data });
     });
   }
 

@@ -262,6 +262,8 @@ class Cart {
       res.status(200).json({ results: results });
     });
   }
+
+  
   addCart(req, res) {
     const strQry = `
     INSERT INTO Cart
@@ -276,6 +278,8 @@ class Cart {
       }
     });
   }
+
+
   updateCart(req, res) {
     const strQry = `
     UPDATE Cart
@@ -291,6 +295,8 @@ class Cart {
       }
     });
   }
+
+
   deleteCart(req, res) {
     const strQry = `
     DELETE FROM Cart

@@ -22,7 +22,7 @@ const app = express();
 
 const { errorHandling } = require("./Middleware/ErrorHandling");
 
-// Cookie-Parser ---- want some cookies?
+// Cookie-Parser
 
 const cookieParser = require("cookie-parser");
 

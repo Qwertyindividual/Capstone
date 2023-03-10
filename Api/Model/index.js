@@ -183,7 +183,7 @@ class Product {
 
   fetchProduct(req, res) {
     const strQry = `
-    SELECT id, productName, prodDescription, prodCategory, Price, Quantity, imgURL
+    SELECT prodID, productName, prodDescription, prodCategory, Price, Quantity, imgURL
     FROM Products
     WHERE prodID = ?;
     `;
